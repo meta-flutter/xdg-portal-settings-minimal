@@ -1,0 +1,15 @@
+[package]
+name = "portal_setting_client"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "portal-setting-client"
+path = "src/main.rs"
+
+[dependencies]
+zbus = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }

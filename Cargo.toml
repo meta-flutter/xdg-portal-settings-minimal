@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = [
+    "portal_setting",
+    "portal_setting_cli",
+    "portal_setting_client",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["XDG Portal Settings Contributors"]
+license = "MIT"
+
+[workspace.dependencies]
+zbus = "4.0"
+tokio = { version = "1.35", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+anyhow = "1.0"
