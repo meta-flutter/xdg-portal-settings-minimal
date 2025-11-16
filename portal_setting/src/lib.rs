@@ -113,7 +113,7 @@ impl SettingsStore {
             if namespaces.is_empty() || namespaces.contains(&key.namespace) {
                 result
                     .entry(key.namespace.clone())
-                    .or_insert_with(HashMap::new)
+                    .or_default()
                     .insert(key.key.clone(), value.clone());
             }
         }
@@ -179,13 +179,13 @@ impl SettingsStore {
             }
             // org.gnome.desktop.privacy validations
             ("org.gnome.desktop.privacy", "remember-recent-files") => {
-                if let Ok(_) = <bool>::try_from(value) {
+                if <bool>::try_from(value).is_ok() {
                     return Ok(());
                 }
                 anyhow::bail!("remember-recent-files must be a boolean");
             }
             ("org.gnome.desktop.privacy", "recent-files-max-age") => {
-                if let Ok(_) = <i32>::try_from(value) {
+                if <i32>::try_from(value).is_ok() {
                     return Ok(());
                 }
                 anyhow::bail!("recent-files-max-age must be an i32");
