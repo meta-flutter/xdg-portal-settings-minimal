@@ -1,0 +1,16 @@
+[package]
+name = "portal_setting"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+zbus = { workspace = true }
+serde = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+
+[lib]
+name = "portal_setting"
+path = "src/lib.rs"

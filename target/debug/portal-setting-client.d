@@ -1,0 +1,1 @@
+/home/runner/work/xdg-portal-settings-minimal/xdg-portal-settings-minimal/target/debug/portal-setting-client: /home/runner/work/xdg-portal-settings-minimal/xdg-portal-settings-minimal/portal_setting_client/src/main.rs
